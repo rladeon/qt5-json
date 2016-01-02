@@ -17,11 +17,23 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>60</x>
       <y>130</y>
-      <width>75</width>
+      <width>121</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#pushButton {
+    background-color: blue;
+   
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    min-width: 5em;
+
+	color: white;
+}</string>
     </property>
     <property name="text">
      <string>Start</string>
@@ -32,9 +44,21 @@
      <rect>
       <x>220</x>
       <y>130</y>
-      <width>75</width>
+      <width>101</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#pushButton_2 {
+    background-color: blue;
+   color: #ffffff;
+
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    min-width: 5em;
+
+}</string>
     </property>
     <property name="text">
      <string>Quit</string>
