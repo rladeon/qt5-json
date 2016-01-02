@@ -13,6 +13,17 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QListView {
+    color: rgb(127, 0, 63);
+    background-color: rgb(255, 255, 241);
+    selection-color: white;                             
+    selection-background-color: rgb(191, 31, 127);
+    border: 2px groove gray;
+    border-radius: 10px;
+    padding: 2px 4px;
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QListView" name="listView">
     <property name="geometry">
@@ -24,10 +35,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QListView {
-    show-decoration-selected: 1; /* make the selection span the entire width of the view */
-}
-
+     <string notr="true">
 QListView::item:alternate {
     background: #EEEEEE;
 }
