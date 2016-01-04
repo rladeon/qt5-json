@@ -41,7 +41,8 @@ int main(int argc, char *argv[])
     splashScrWindow.move(  QApplication::desktop()->width() / 3,
     QApplication::desktop()->height() / 3 );
     splashScrWindow.show();
-    splashScrWindow.showMessage(QString("Loading..."),Qt::AlignCenter | Qt::AlignBottom,QColor(0,150,255));
+    //splashScrWindow.showMessage(QString("Loading..."),Qt::AlignCenter | Qt::AlignBottom,QColor(0,150,255));
+    a.processEvents();
     I::sleep(3);
 
     w.show();
