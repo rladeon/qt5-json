@@ -17,8 +17,7 @@ SOURCES += main.cpp\
     listcar.cpp
 
 HEADERS  += mainwindow.h \
-    listcar.h \
-    splashscreen.h
+    listcar.h
 
 FORMS    += mainwindow.ui \
     listcar.ui

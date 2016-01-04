@@ -4,9 +4,9 @@
 #include "QSplashScreen"
 #include "Windows.h"
 #include "QThread"
-#include "splashscreen.h"
 #include "QPainter"
 #include "QTimer"
+#include "QDesktopWidget"
 class I : public QThread
 
 {
@@ -26,11 +26,11 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
     QImage splashScrImage ("C:/developpement/qt/greencar/asset/introd_diagnostique.png");
-    QSize screenSize = QApplication::desktop()->geometry().size()/2;
-
+    //QSize screenSize = QApplication::desktop()->geometry().size()/2;
+QSize screenSize  = splashScrImage.size()/2;
     QImage splashScr (screenSize, QImage::Format_ARGB32_Premultiplied);
     QPainter painter (&splashScr);
-    painter.fillRect(splashScr.rect(), Qt::transparent);
+    painter.fillRect(splashScr.rect(), Qt::TransparentMode);
     QImage scaled = splashScrImage.scaled(screenSize, Qt::KeepAspectRatio);
     QRect scaledRect = scaled.rect();
     scaledRect.moveCenter(splashScr.rect().center());
@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
         QApplication::desktop()->height() / 3 );
 
     splashScrWindow.show();
+    splashScrWindow.showMessage(QString("Loading..."),Qt::AlignCenter | Qt::AlignBottom,QColor(0,150,255));
     I::sleep(3);
 
     w.show();
