@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "listcar.h"
+
+
 namespace Ui {
 class MainWindow;
 }
@@ -24,6 +26,7 @@ private:
     Ui::MainWindow *ui;
     MainWindow *m;
     listcar *Listcar;
+
 };
 
 #endif // MAINWINDOW_H

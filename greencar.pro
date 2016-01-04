@@ -17,7 +17,12 @@ SOURCES += main.cpp\
     listcar.cpp
 
 HEADERS  += mainwindow.h \
-    listcar.h
+    listcar.h \
+    splashscreen.h
 
 FORMS    += mainwindow.ui \
     listcar.ui
+
+DISTFILES += \
+    asset/Loading.gif \
+    asset/introd_diagnostique.png
