@@ -22,6 +22,5 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     listcar.ui
 
-DISTFILES += \
-    asset/Loading.gif \
-    asset/introd_diagnostique.png
+RESOURCES += \
+    greencar.qrc
