@@ -60,7 +60,6 @@ QStringList listcar::sendrequest()
         if (reply->error() == QNetworkReply::NoError) {
             //success
 
-            //QString strReply = (QString) reply->readAll();
             QByteArray strReply = reply->readAll();
 
             // Make data
@@ -73,7 +72,22 @@ QStringList listcar::sendrequest()
                         if(value.isObject())
                         {
                             QJsonObject obj = value.toObject();qDebug() << obj["mark"].toString();
-                            List.append(obj["mark"].toString());
+                            if(!obj.isEmpty())
+                            {
+                                if(!(obj["mark"].isNull()) && !(obj["model"].isNull()) && !(obj["serie"].isNull()))
+                                {
+                                        List.append(obj["mark"].toString()+" "+obj["model"].toString()+" "+obj["serie"].toString());
+                                }
+                                else if(!(obj["mark"].isNull()) && !(obj["model"].isNull()))
+                                {
+                                        List.append(obj["mark"].toString()+" "+obj["model"].toString());
+                                }
+                                else
+                                {
+                                        List.append(obj["mark"].toString());
+                                }
+                            }
+
                         }
                         else if(value.isString())
                         {
