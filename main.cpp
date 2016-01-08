@@ -25,8 +25,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     listcar w;
-    QImage splashScrImage (":/asset/introd_diagnostique.png");
-    QSize screenSize  = splashScrImage.size()/2;
+    QImage splashScrImage (":/asset/ford.jpg");
+    QSize screenSize  = splashScrImage.size();
     QImage splashScr (screenSize, QImage::Format_ARGB32_Premultiplied);
     QPainter painter (&splashScr);
     painter.fillRect(splashScr.rect(), Qt::transparent);

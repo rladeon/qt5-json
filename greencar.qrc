@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>asset/introd_diagnostique.png</file>
+        <file>asset/ford.jpg</file>
     </qresource>
 </RCC>
