@@ -14,13 +14,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    listcar.cpp
+    listcar.cpp \
+    showcar.cpp
 
 HEADERS  += mainwindow.h \
-    listcar.h
+    listcar.h \
+    showcar.h
 
 FORMS    += mainwindow.ui \
-    listcar.ui
+    listcar.ui \
+    showcar.ui
 
 RESOURCES += \
     greencar.qrc

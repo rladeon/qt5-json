@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "QStringListModel"
+#include "showcar.h"
+
 namespace Ui {
 class listcar;
 }
@@ -16,9 +18,15 @@ public:
     ~listcar();
     QStringList sendrequest();
 
+
+private slots:
+    void on_listView_clicked();
+
 private:
     Ui::listcar *ui;
     QStringListModel *model;
+    ShowCar *showcar;
+    listcar *listm;
 };
 
 #endif // LISTCAR_H

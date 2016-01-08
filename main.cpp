@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "listcar.h"
 #include <QApplication>
 #include "QPixmap"
 #include "QSplashScreen"
@@ -24,7 +24,7 @@ public:
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
+    listcar w;
     QImage splashScrImage (":/asset/introd_diagnostique.png");
     QSize screenSize  = splashScrImage.size()/2;
     QImage splashScr (screenSize, QImage::Format_ARGB32_Premultiplied);

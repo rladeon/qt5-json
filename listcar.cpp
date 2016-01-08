@@ -66,12 +66,13 @@ QStringList listcar::sendrequest()
 
                     QJsonDocument jsonResponse = QJsonDocument::fromJson(strReply);
                     QJsonArray jsonArray = jsonResponse.array();
-
+                    List.clear();
                     foreach (const QJsonValue & value, jsonArray)
                     {
+
                         if(value.isObject())
                         {
-                            QJsonObject obj = value.toObject();qDebug() << obj["mark"].toString();
+                            QJsonObject obj = value.toObject();
                             if(!obj.isEmpty())
                             {
                                 if(!(obj["mark"].isNull()) && !(obj["model"].isNull()) && !(obj["serie"].isNull()))
@@ -104,4 +105,31 @@ QStringList listcar::sendrequest()
             delete reply;
         }
         return List;
+}
+
+void listcar::on_listView_clicked()
+{
+
+    QModelIndexList list = ui->listView->selectionModel()->selectedIndexes();
+
+       QStringList slist;
+       foreach(const QModelIndex &index, list){
+           slist.append( index.data(Qt::DisplayRole ).toString());
+       }
+      /* if(slist.empty())
+       {
+           qDebug() << "Not item selected found!!";
+       }
+       else
+       {
+           qDebug() << "Item selected found!!";
+       }*/
+     //  qDebug() << slist.join(",");
+    //qDebug() << "Hello world";
+    showcar = new ShowCar(this);
+    showcar->SetList(slist);
+    showcar->show();//ui->listView->hide();
+    //listm->hide();
+
+
 }
