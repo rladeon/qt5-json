@@ -17,14 +17,22 @@ public:
     explicit listcar(QWidget *parent = 0);
     ~listcar();
     QStringList sendrequest();
+    QStringList sendmark(QStringList l);
+
+    QStringList sendmodel(QStringList l);
+    QStringList sendserie(QStringList l);
 
 
 private slots:
     void on_listView_clicked();
 
+    void on_listView_2_clicked();
+
+    void on_listView_3_clicked();
+
 private:
     Ui::listcar *ui;
-    QStringListModel *model;
+    QStringListModel *model, *model2, *model3;
     ShowCar *showcar;
     listcar *listm;
 };
